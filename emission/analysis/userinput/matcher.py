@@ -96,7 +96,7 @@ def create_composite_objects(user_id):
         # for composite_trip, we want to get the actual confirmed_place object
         confirmed_place_id = ct["data"]["confirmed_place"]
         confirmed_place = esda.get_entry(esda.CONFIRMED_PLACE_KEY, confirmed_place_id)
-        composite_trip_dict["data"]["confirmed_place"] = confirmed_place
+        composite_trip_dict["data"]["end_confirmed_place"] = confirmed_place
 
         # retrieve locations for the trajectory of the trip
         time_query = estt.TimeQuery("data.ts", ct["data"]["start_ts"], ct["data"]["end_ts"])
